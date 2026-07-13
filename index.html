@@ -104,27 +104,29 @@
       </div>
     </section>
 
-    <section id="music" class="section">
-        <h2>Music Library - Define Reality</h2>
-        <div class="music-grid">
-            
-            <div class="track">
-                <img src="https://JunkieDave/JemRecords/blob/main/music/Alright%20with%20me.jpg
-                <h3>Alright With Me</h3>
-                <p>Junkie Dave</p>
-                <audio controls>
-                    <source src="https://junkiedave.github.io/JemRecords/music/Alright%20with%20me.mp3" type="audio/mpeg">
-              
-                </audio>
-                <p><a href="https://junkiedave.github.io/JemRecords/music/Alright%20with%20me.mp3" download>Download</a></p>
-            </div>
+    <section id="music" class="section container" aria-labelledby="music-heading">
+      <h2 id="music-heading">Music Library</h2>
+      <div id="musicGrid" class="music-grid" aria-live="polite">
+        <!-- Your uploaded track -->
+        <article class="track" role="article" aria-label="Track: Alright with me by JunkieDave">
+          <img src="https://raw.githubusercontent.com/JunkieDave/JemRecords/main/music/Alright%20with%20me.jpg" alt="Track artwork for Alright with me">
+          <h3>Alright with me</h3>
+          <p>JunkieDave</p>
+          <audio controls preload="none">
+            <source src="https://raw.githubusercontent.com/JunkieDave/JemRecords/main/music/Alright%20with%20me.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+          <p><a class="download" href="https://raw.githubusercontent.com/JunkieDave/JemRecords/main/music/Alright%20with%20me.mp3" download="Alright with me.mp3">Download</a></p>
+        </article>
 
-        </div>
+        <!-- Additional tracks (static or generated) will be inserted here by the upload preview script -->
+      </div>
     </section>
+
     <section id="upload" class="section container" aria-labelledby="upload-heading">
       <h2 id="upload-heading">Submit a Track</h2>
       <div class="upload-panel" role="region" aria-label="Submit a track">
-        <p class="hint">Select one or more audio files to preview. Use the Download button to save a local copy. To host publicly, upload your files to your repo or a public host and replace the audio URLs.</p>
+        <p class="hint">Select one or more audio files to preview. Use the Download button to save a local copy. To host publicly, upload your files to your repo or a public host and use the direct links in the Music Library.</p>
 
         <!-- NOTE: This is a local preview only. Replace action with your server endpoint to actually upload files. -->
         <form id="uploadForm" method="post" enctype="multipart/form-data" action="#" onsubmit="return false;">
@@ -204,7 +206,7 @@
 
       // Small helper to avoid XSS when inserting file names
       function escapeHtml(str){
-        return str.replace(/[&<>"']/g, function(match){
+        return str.replace(/[&<>"]|'/g, function(match){
           return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[match];
         });
       }
