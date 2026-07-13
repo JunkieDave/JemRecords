@@ -1,216 +1,70 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Jem Records — Define Reality's premier music label. Browse, preview, and submit tracks." />
-  <title>Jem Records — Define Reality</title>
-  <style>
-    :root{
-      --bg:#0f0f0f;
-      --panel:#1f1f1f;
-      --accent:#ff00ff;
-      --muted:#bdbdbd;
-      --radius:8px;
-      --max-width:1200px;
-      --gap:20px;
-      --content-padding:20px;
-      --font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-    }
-
-    html,body{height:100%; margin:0; font-family:var(--font); background:var(--bg); color:#fff; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;}
-    a{color:var(--accent); text-decoration:none;}
-    a:focus{outline:2px dashed var(--accent); outline-offset:3px;}
-
-    /* Skip link for keyboard users */
-    .skip-link{position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden;}
-    .skip-link:focus{left:10px;top:10px;width:auto;height:auto;padding:8px 12px;background:#000;border-radius:4px;z-index:1000;}
-
-    header{background:linear-gradient(180deg, rgba(255,0,255,0.03), transparent); padding:24px 16px; text-align:center;}
-    .logo{font-size:2rem; font-weight:700; color:var(--accent); letter-spacing:2px;}
-    .tagline{color:var(--muted); margin:6px 0 0;}
-
-    nav{background:var(--panel); display:flex; gap:12px; justify-content:center; padding:10px 12px; position:sticky; top:0; z-index:50;}
-    nav a{color:#fff; font-weight:600; padding:8px 12px; border-radius:6px;}
-    nav a:hover, nav a:focus{background:rgba(255,255,255,0.03); color:var(--accent);}
-
-    .hero{
-      background-image:
-        linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-        url('https://via.placeholder.com/1920x600?text=Jem+Records');
-      background-size:cover;
-      background-position:center;
-      min-height:40vh;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-      padding:48px 16px;
-    }
-    .hero-content h1{font-size:2.2rem; margin:0 0 8px; letter-spacing:1px;}
-    .hero-content p{color:var(--muted); margin:0 0 16px;}
-
-    .container{max-width:var(--max-width); margin:0 auto; padding:var(--content-padding);}
-
-    .section{padding:40px 0;}
-    h2{color:var(--accent); text-align:center; margin:0 0 18px;}
-
-    .music-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:var(--gap); align-items:start;}
-    .track{
-      background:var(--panel); padding:14px; border-radius:var(--radius); text-align:center;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.4);
-    }
-    .track img{width:100%; height:180px; object-fit:cover; border-radius:6px;}
-    .track h3{margin:10px 0 6px; font-size:1.05rem;}
-    .track p{margin:0; color:var(--muted); font-size:0.95rem;}
-    .track audio{width:100%; margin-top:12px;}
-    .track .download{display:inline-block; margin-top:8px; background:var(--accent); color:#000; padding:8px 12px; border-radius:6px; font-weight:700;}
-
-    footer{background:var(--panel); padding:20px; text-align:center; color:var(--muted); margin-top:28px;}
-
-    /* Upload area */
-    .upload-panel{background:var(--panel); padding:20px; border-radius:var(--radius); display:flex; flex-direction:column; gap:12px; align-items:center;}
-    input[type=file]{background:transparent; color:var(--muted);}
-    .hint{color:var(--muted); font-size:0.95rem;}
-
-    /* Responsive tweaks */
-    @media (max-width:600px){
-      .hero-content h1{font-size:1.6rem;}
-      .track img{height:140px;}
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jem Records - Define Reality</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #0f0f0f; color: #ffffff; margin: 0; padding: 0; }
+        header { background-color: #1a1a1a; padding: 25px; text-align: center; }
+        .logo { font-size: 3em; font-weight: bold; color: #ff00ff; letter-spacing: 3px; }
+        nav { background-color: #1a1a1a; padding: 15px; text-align: center; }
+        nav a { color: white; margin: 0 20px; text-decoration: none; font-size: 1.1em; }
+        .hero { background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://via.placeholder.com/1920x500?text=Jem+Records'); background-size: cover; height: 420px; display: flex; align-items: center; justify-content: center; text-align: center; }
+        .section { padding: 50px 20px; max-width: 1100px; margin: 0 auto; }
+        h2 { color: #ff00ff; text-align: center; margin-bottom: 30px; }
+        .music-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+        .track { background-color: #1a1a1a; padding: 20px; border-radius: 12px; text-align: center; }
+        .track img { width: 100%; max-height: 220px; object-fit: cover; border-radius: 8px; }
+        audio { width: 100%; margin: 15px 0; }
+        footer { background-color: #1a1a1a; padding: 30px; text-align: center; font-size: 0.95em; }
+    </style>
 </head>
 <body>
-  <a class="skip-link" href="#music">Skip to music</a>
 
-  <header>
-    <div class="logo" aria-hidden="false">JEM RECORDS</div>
-    <p class="tagline">Define Reality's Premier Music Label</p>
-  </header>
+    <header>
+        <div class="logo">JEM RECORDS</div>
+        <p>Define Reality's Official Music Label</p>
+    </header>
 
-  <nav role="navigation" aria-label="Main">
-    <a href="#home">Home</a>
-    <a href="#artists">Artists</a>
-    <a href="#music">Music Library</a>
-    <a href="#upload">Submit Track</a>
-  </nav>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#music">Music Library</a>
+        <a href="#submit">Submit Track</a>
+    </nav>
 
-  <main>
-    <section id="home" class="hero" aria-labelledby="hero-heading">
-      <div class="hero-content container">
-        <h1 id="hero-heading">Jem Records</h1>
-        <p>Official music label of Define Reality. Real artists. Real sound.</p>
-        <a href="#music" style="background:var(--accent); color:black; padding:12px 20px; border-radius:6px; font-weight:700;">Browse Our Tracks</a>
-      </div>
+    <section id="home" class="hero">
+        <div>
+            <h1 style="font-size: 3em;">Jem Records</h1>
+            <p style="font-size: 1.4em;">Real Music from Define Reality</p>
+        </div>
     </section>
 
-    <section id="music" class="section container" aria-labelledby="music-heading">
-      <h2 id="music-heading">Music Library</h2>
-      <div id="musicGrid" class="music-grid" aria-live="polite">
-        <!-- Your uploaded track -->
-        <article class="track" role="article" aria-label="Track: Alright with me by JunkieDave">
-          <img src="https://raw.githubusercontent.com/JunkieDave/JemRecords/main/music/Alright%20with%20me.jpg" alt="Track artwork for Alright with me">
-          <h3>Alright with me</h3>
-          <p>JunkieDave</p>
-          <audio controls preload="none">
-            <source src="https://raw.githubusercontent.com/JunkieDave/JemRecords/main/music/Alright%20with%20me.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
-          </audio>
-          <p><a class="download" href="https://raw.githubusercontent.com/JunkieDave/JemRecords/main/music/Alright%20with%20me.mp3" download="Alright with me.mp3">Download</a></p>
-        </article>
+    <section id="music" class="section">
+        <h2>Music Library</h2>
+        <div class="music-grid">
 
-        <!-- Additional tracks (static or generated) will be inserted here by the upload preview script -->
-      </div>
+            <div class="track">
+                <img src="https://junkiedave.github.io/JemRecords/music/Alright%20with%20me.jpg" alt="Alright With Me">
+                <h3>Alright With Me</h3>
+                <p>Junkie Dave</p>
+                <audio controls>
+                    <source src="https://junkiedave.github.io/JemRecords/music/Alright%20with%20me.mp3" type="audio/mpeg">
+                </audio>
+                <p><a href="https://junkiedave.github.io/JemRecords/music/Alright%20with%20me.mp3" download>⬇️ Download</a></p>
+            </div>
+
+        </div>
     </section>
 
-    <section id="upload" class="section container" aria-labelledby="upload-heading">
-      <h2 id="upload-heading">Submit a Track</h2>
-      <div class="upload-panel" role="region" aria-label="Submit a track">
-        <p class="hint">Select one or more audio files to preview. Use the Download button to save a local copy. To host publicly, upload your files to your repo or a public host and use the direct links in the Music Library.</p>
-
-        <!-- NOTE: This is a local preview only. Replace action with your server endpoint to actually upload files. -->
-        <form id="uploadForm" method="post" enctype="multipart/form-data" action="#" onsubmit="return false;">
-          <label for="fileInput" style="display:inline-block; background:transparent; padding:8px 12px; border-radius:6px; border:1px dashed rgba(255,255,255,0.06); cursor:pointer;">
-            Choose audio files
-            <input id="fileInput" name="tracks" type="file" accept="audio/*" multiple style="display:none" aria-describedby="upload-hint">
-          </label>
-          <div style="margin-top:8px;">
-            <button id="clearBtn" type="button" style="background:transparent;border:1px solid rgba(255,255,255,0.06); color:var(--muted); padding:8px 10px; border-radius:6px;">Clear Preview</button>
-          </div>
-        </form>
-
-        <p class="hint" id="upload-hint"><strong>Tip:</strong> To publish tracks, host MP3 files on your site, repo, or a static host (Netlify, GitHub Pages, etc.) and use the direct links in the Music Library.</p>
-      </div>
+    <section id="submit" class="section" style="background:#1a1a1a;">
+        <h2>Submit Your Track</h2>
+        <p>Upload more MP3s + images to the "music" folder and let me know the filenames.</p>
     </section>
-  </main>
 
-  <footer>
-    <p>&copy; 2026 Jem Records • Define Reality</p>
-    <p>Est. in the streets • All rights reserved</p>
-  </footer>
+    <footer>
+        <p>&copy; 2026 Jem Records • Define Reality</p>
+    </footer>
 
-  <script>
-    // Simple local preview: when files are selected we show them in the music grid with object URLs.
-    (function(){
-      const fileInput = document.getElementById('fileInput');
-      const musicGrid = document.getElementById('musicGrid');
-      const clearBtn = document.getElementById('clearBtn');
-
-      // Track object URLs so we can revoke them later
-      let objectUrls = [];
-
-      fileInput.addEventListener('change', (e) => {
-        const files = Array.from(e.target.files || []);
-        if (!files.length) return;
-        // For each file, create a new track card
-        files.forEach(file => {
-          // Only allow audio types
-          if (!file.type.startsWith('audio/')) return;
-          const url = URL.createObjectURL(file);
-          objectUrls.push(url);
-
-          const article = document.createElement('article');
-          article.className = 'track';
-          article.setAttribute('role','article');
-          article.setAttribute('aria-label', `Local preview: ${file.name}`);
-
-          // Use a generic artwork; you can provide a custom image extraction in a real app.
-          article.innerHTML = `
-            <img src="https://via.placeholder.com/600x400?text=Local+Track" alt="Artwork for ${file.name}">
-            <h3>${escapeHtml(file.name)}</h3>
-            <p>Local preview</p>
-            <audio controls preload="none">
-              <source src="${url}" type="${file.type}">
-              Your browser does not support the audio element.
-            </audio>
-            <p><a class="download" href="${url}" download="${file.name}">Download</a></p>
-          `;
-          // Insert new tracks at the top
-          musicGrid.insertBefore(article, musicGrid.firstChild);
-        });
-      });
-
-      clearBtn.addEventListener('click', () => {
-        // Remove all locally previewed tracks (those with aria-label starting with 'Local preview')
-        const tracks = Array.from(musicGrid.querySelectorAll('.track'));
-        tracks.forEach(t => {
-          if (t.getAttribute('aria-label') && t.getAttribute('aria-label').startsWith('Local preview')) {
-            musicGrid.removeChild(t);
-          }
-        });
-        // revoke object URLs
-        objectUrls.forEach(u => URL.revokeObjectURL(u));
-        objectUrls = [];
-        fileInput.value = '';
-      });
-
-      // Small helper to avoid XSS when inserting file names
-      function escapeHtml(str){
-        return str.replace(/[&<>"]|'/g, function(match){
-          return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[match];
-        });
-      }
-    })();
-  </script>
 </body>
 </html>
