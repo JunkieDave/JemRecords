@@ -12,42 +12,53 @@
         nav a { color: #ffffff; margin: 0 20px; text-decoration: none; font-size: 1.1em; }
         .hero { background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('https://via.placeholder.com/1920x500?text=Define+Reality'); background-size: cover; height: 380px; display: flex; align-items: center; justify-content: center; text-align: center; }
         .section { padding: 50px 20px; max-width: 1100px; margin: 0 auto; }
-        h2 { color: #ffffff; text-align: center; margin-bottom: 30px; font-size: 2em; }
+        h2 { color: #ffffff; text-align: center; margin-bottom: 10px; font-size: 2em; }
+        .section-sub { text-align: center; color: #999; margin-bottom: 30px; font-size: 1em; }
         .music-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
         .track { background-color: #1a1a1a; padding: 20px; border-radius: 12px; text-align: center; }
         .track img { width: 100%; max-height: 220px; object-fit: cover; border-radius: 8px; }
         audio { width: 100%; margin: 15px 0; }
+
+        /* Sound Bank */
+        .bank-collection { margin-bottom: 40px; }
+        .bank-collection-title { color: #fff; font-size: 1.3em; margin-bottom: 18px; border-left: 4px solid #444; padding-left: 12px; }
+        .bank-categories { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; }
+        .bank-category { background-color: #1a1a1a; border-radius: 12px; padding: 20px; border: 1px solid #2a2a2a; }
+        .bank-category h4 { margin: 0 0 14px; color: #ddd; font-size: 1em; text-transform: uppercase; letter-spacing: 1px; }
+        .bank-sound { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 10px 0; border-top: 1px solid #262626; }
+        .bank-category h4 + .bank-sound { border-top: none; }
+        .bank-sound-name { font-size: 0.95em; color: #eee; }
+        .bank-sound-note { display: block; font-size: 0.75em; color: #777; }
+        .copy-url-btn { background-color: #2a2a2a; color: #fff; border: 1px solid #3a3a3a; border-radius: 6px; padding: 6px 12px; font-size: 0.8em; cursor: pointer; white-space: nowrap; }
+        .copy-url-btn:hover { background-color: #3a3a3a; }
+        .copy-url-btn.copied { background-color: #2e7d32; border-color: #2e7d32; }
+        .bank-note { text-align: center; color: #777; font-size: 0.85em; margin-top: 10px; }
+
         footer { background-color: #000000; padding: 30px; text-align: center; font-size: 0.95em; }
     </style>
 </head>
 <body>
-
     <header>
         <img src="https://junkiedave.github.io/JemRecords/jem-logo.png" alt="Jem Records Logo" class="logo">
         <p style="margin-top:10px; color:#aaa;">Define Reality's Premier Music Label</p>
     </header>
-
     <nav>
         <a href="#home">Home</a>
         <a href="#music">Music Library</a>
+        <a href="#soundbank">Sound Bank</a>
     </nav>
-
     <section id="home" class="hero">
         <div>
             <h1 style="font-size: 2.4em; margin: 0;">Welcome to Jem Records</h1>
             <p style="font-size: 1.3em; max-width: 700px; margin: 15px auto 0;">
-                Where Talent Becomes Legacy.
-Jem Records is Define Reality’s premier independent record label and recording studio. Whether you’re cutting your first track, producing beats, or building a career catalog, this is where ambition meets opportunity.
-Record, collaborate, release original music, climb the charts, and leave your mark on the city.
-Built in Define Reality. Heard Everywhere.
+                Home of the real sound in Define Reality. 
+                Artists, producers, and the streets come together here.
             </p>
         </div>
     </section>
-
     <section id="music" class="section">
         <h2>Music Library</h2>
         <div class="music-grid">
-
             <div class="track">
                 <img src="https://junkiedave.github.io/JemRecords/music/Alright%20with%20me.jpg" alt="Alright With Me">
                 <h3>Alright With Me</h3>
@@ -56,13 +67,165 @@ Built in Define Reality. Heard Everywhere.
                     <source src="https://junkiedave.github.io/JemRecords/music/Alright%20with%20me.mp3" type="audio/mpeg">
                 </audio>
             </div>
-
         </div>
+    </section>
+
+    <section id="soundbank" class="section">
+        <h2>Sound Bank</h2>
+        <p class="section-sub">Direct WAV links for Envi's Custom Instrument menu — copy a URL, paste it in, map it to a root note.</p>
+
+        <div class="bank-collection">
+            <h3 class="bank-collection-title">Define Reality Essentials Vol. 1</h3>
+            <div class="bank-categories">
+
+                <div class="bank-category">
+                    <h4>Kicks</h4>
+                    <div class="bank-sound">
+                        <span class="bank-sound-name">Kick (Bounce)<span class="bank-sound-note">One-shot</span></span>
+                        <button class="copy-url-btn" data-url="https://junkiedave.github.io/JemRecords/soundbank/drums/kicks/Steven%20Cymatics%20-%20Kick%20(Bounce).wav">Copy URL</button>
+                    </div>
+                    <div class="bank-sound">
+                        <span class="bank-sound-name">Kick (Bound)<span class="bank-sound-note">One-shot</span></span>
+                        <button class="copy-url-btn" data-url="https://junkiedave.github.io/JemRecords/soundbank/drums/kicks/Steven%20Cymatics%20-%20Kick%20(Bound).wav">Copy URL</button>
+                    </div>
+                    <div class="bank-sound">
+                        <span class="bank-sound-name">Kick (Knock)<span class="bank-sound-note">One-shot</span></span>
+                        <button class="copy-url-btn" data-url="https://junkiedave.github.io/JemRecords/soundbank/drums/kicks/Steven%20Cymatics%20-%20Kick%20(Knock).wav">Copy URL</button>
+                    </div>
+                    <div class="bank-sound">
+                        <span class="bank-sound-name">Kick (Sturdy)<span class="bank-sound-note">One-shot</span></span>
+                        <button class="copy-url-btn" data-url="https://junkiedave.github.io/JemRecords/soundbank/drums/kicks/Steven%20Cymatics%20-%20Kick%20(Sturdy).wav">Copy URL</button>
+                    </div>
+                </div>
+
+                <div class="bank-category">
+                    <h4>Claps</h4>
+                    <div class="bank-sound">
+                        <span class="bank-sound-name">Clap (Fighter)<span class="bank-sound-note">One-shot</span></span>
+                        <button class="copy-url-btn" data-url="https://junkiedave.github.io/JemRecords/soundbank/drums/claps/Steven%20Cymatics%20-%20Clap%20(Fighter).wav">Copy URL</button>
+                    </div>
+                    <div class="bank-sound">
+                        <span class="bank-sound-name">Clap (Foil)<span class="bank-sound-note">One-shot</span></span>
+                        <button class="copy-url-btn" data-url="https://junkiedave.github.io/JemRecords/soundbank/drums/claps/Steven%20Cymatics%20-%20Clap%20(Foil).wav">Copy URL</button>
+                    </div>
+                    <div class="bank-sound">
+                        <span class="bank-sound-name">Clap (Meal)<span class="bank-sound-note">One-shot</span></span>
+                        <button class="copy-url-btn" data-url="https://junkiedave.github.io/JemRecords/soundbank/drums/claps/Steven%20Cymatics%20-%20Clap%20(Meal).wav">Copy URL</button>
+                    </div>
+                    <div class="bank-sound">
+                        <span class="bank-sound-name">Clap (Paper)<span class="bank-sound-note">One-shot</span></span>
+                        <button class="copy-url-btn" data-url="https://junkiedave.github.io/JemRecords/soundbank/drums/claps/Steven%20Cymatics%20-%20Clap%20(Paper).wav">Copy URL</button>
+                    </div>
+                    <div class="bank-sound">
+                        <span class="bank-sound-name">Clap (Withlove)<span class="bank-sound-note">One-shot</span></span>
+                        <button class="copy-url-btn" data-url="https://junkiedave.github.io/JemRecords/soundbank/drums/claps/Steven%20Cymatics%20-%20Clap%20(Withlove).wav">Copy URL</button>
+                    </div>
+                </div>
+
+                <div class="bank-category">
+                    <h4>Hi-Hats</h4>
+                    <div class="bank-sound">
+                        <span class="bank-sound-name">Hihat (Check)<span class="bank-sound-note">One-shot</span></span>
+                        <button class="copy-url-btn" data-url="https://junkiedave.github.io/JemRecords/soundbank/drums/hihats/Steven%20Cymatics%20-%20Hihat%20(Check).wav">Copy URL</button>
+                    </div>
+                    <div class="bank-sound">
+                        <span class="bank-sound-name">Hihat (Traplord)<span class="bank-sound-note">One-shot</span></span>
+                        <button class="copy-url-btn" data-url="https://junkiedave.github.io/JemRecords/soundbank/drums/hihats/Steven%20Cymatics%20-%20Hihat%20(Traplord).wav">Copy URL</button>
+                    </div>
+                </div>
+
+                <div class="bank-category">
+                    <h4>Open Hats</h4>
+                    <div class="bank-sound">
+                        <span class="bank-sound-name">Open Hat (Clank)<span class="bank-sound-note">One-shot</span></span>
+                        <button class="copy-url-btn" data-url="https://junkiedave.github.io/JemRecords/soundbank/drums/openhats/Steven%20Cymatics%20-%20Open%20Hat%20(Clank).wav">Copy URL</button>
+                    </div>
+                    <div class="bank-sound">
+                        <span class="bank-sound-name">Open Hat (House)<span class="bank-sound-note">One-shot</span></span>
+                        <button class="copy-url-btn" data-url="https://junkiedave.github.io/JemRecords/soundbank/drums/openhats/Steven%20Cymatics%20-%20Open%20Hat%20(House).wav">Copy URL</button>
+                    </div>
+                    <div class="bank-sound">
+                        <span class="bank-sound-name">Open Hat (One)<span class="bank-sound-note">One-shot</span></span>
+                        <button class="copy-url-btn" data-url="https://junkiedave.github.io/JemRecords/soundbank/drums/openhats/Steven%20Cymatics%20-%20Open%20Hat%20(One).wav">Copy URL</button>
+                    </div>
+                    <div class="bank-sound">
+                        <span class="bank-sound-name">Open Hat (Specialty)<span class="bank-sound-note">One-shot</span></span>
+                        <button class="copy-url-btn" data-url="https://junkiedave.github.io/JemRecords/soundbank/drums/openhats/Steven%20Cymatics%20-%20Open%20Hat%20(Specialty).wav">Copy URL</button>
+                    </div>
+                    <div class="bank-sound">
+                        <span class="bank-sound-name">Open Hat (Swing)<span class="bank-sound-note">One-shot</span></span>
+                        <button class="copy-url-btn" data-url="https://junkiedave.github.io/JemRecords/soundbank/drums/openhats/Steven%20Cymatics%20-%20Open%20Hat%20(Swing).wav">Copy URL</button>
+                    </div>
+                    <div class="bank-sound">
+                        <span class="bank-sound-name">Open Hat (Wind)<span class="bank-sound-note">One-shot</span></span>
+                        <button class="copy-url-btn" data-url="https://junkiedave.github.io/JemRecords/soundbank/drums/openhats/Steven%20Cymatics%20-%20Open%20Hat%20(Wind).wav">Copy URL</button>
+                    </div>
+                </div>
+
+                <div class="bank-category">
+                    <h4>Snares</h4>
+                    <div class="bank-sound">
+                        <span class="bank-sound-name">Snare (Join)<span class="bank-sound-note">One-shot</span></span>
+                        <button class="copy-url-btn" data-url="https://junkiedave.github.io/JemRecords/soundbank/drums/snares/Steven%20Cymatics%20-%20Snare%20(Join).wav">Copy URL</button>
+                    </div>
+                    <div class="bank-sound">
+                        <span class="bank-sound-name">Snare (Sniper)<span class="bank-sound-note">One-shot</span></span>
+                        <button class="copy-url-btn" data-url="https://junkiedave.github.io/JemRecords/soundbank/drums/snares/Steven%20Cymatics%20-%20Snare%20(Sniper).wav">Copy URL</button>
+                    </div>
+                </div>
+
+                <div class="bank-category">
+                    <h4>Percussion</h4>
+                    <div class="bank-sound">
+                        <span class="bank-sound-name">Percussion (Orgin)<span class="bank-sound-note">One-shot</span></span>
+                        <button class="copy-url-btn" data-url="https://junkiedave.github.io/JemRecords/soundbank/drums/percussion/Steven%20Cymatics%20-%20Percussion%20(Orgin).wav">Copy URL</button>
+                    </div>
+                    <div class="bank-sound">
+                        <span class="bank-sound-name">Rim (Prince)<span class="bank-sound-note">One-shot</span></span>
+                        <button class="copy-url-btn" data-url="https://junkiedave.github.io/JemRecords/soundbank/drums/rim/Steven%20Cymatics%20-%20Rim%20(Prince).wav">Copy URL</button>
+                    </div>
+                </div>
+
+                <div class="bank-category">
+                    <h4>Bass</h4>
+                    <div class="bank-sound">
+                        <span class="bank-sound-name">808 Halves (C)<span class="bank-sound-note">Root: C1</span></span>
+                        <button class="copy-url-btn" data-url="https://junkiedave.github.io/JemRecords/soundbank/bass/Steven%20Cymatics%20-%20808%20Halves%20(C).wav">Copy URL</button>
+                    </div>
+                    <div class="bank-sound">
+                        <span class="bank-sound-name">Reese Whale (C)<span class="bank-sound-note">Root: C1</span></span>
+                        <button class="copy-url-btn" data-url="https://junkiedave.github.io/JemRecords/soundbank/drums/reesewhale/Steven%20Cymatics%20-%20Reese%20Whale%20(C).wav">Copy URL</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <p class="bank-note">In Envi: open Custom Instrument &rarr; paste the WAV URL &rarr; set its root note &rarr; add more samples for smoother pitch-shifting across the keyboard.</p>
     </section>
 
     <footer>
         <p>&copy; 2026 Jem Records • Define Reality • All Rights Reserved</p>
     </footer>
 
+    <script>
+        document.querySelectorAll('.copy-url-btn').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                const url = btn.getAttribute('data-url');
+                navigator.clipboard.writeText(url).then(function () {
+                    const original = btn.textContent;
+                    btn.textContent = 'Copied!';
+                    btn.classList.add('copied');
+                    setTimeout(function () {
+                        btn.textContent = original;
+                        btn.classList.remove('copied');
+                    }, 1500);
+                }).catch(function () {
+                    btn.textContent = 'Copy failed';
+                    setTimeout(function () { btn.textContent = 'Copy URL'; }, 1500);
+                });
+            });
+        });
+    </script>
 </body>
 </html>
